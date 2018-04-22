@@ -1,14 +1,8 @@
-# Simple Boilerplate
+# Simple Vue(2) + Webpack(3) Boilerplate
 
 > A Vue.js project
 
-Vue 2
-Vue Router
-Vuex
-Vue-resource
-Bootstrap 3
-Font Awesome 4
-JWT (kinda)
+Vue 2, Vue Router, Vuex, Vue-resource, Bootstrap 3, Font Awesome 4, JWT (kinda)
 
 By default, is set to proxy request to an API running on PORT 3000.
 
