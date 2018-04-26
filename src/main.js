@@ -7,7 +7,7 @@ import router from './router'
 // import authInterceptor from './middlewares/AuthInterceptor'
 //eslint-disable-next-line
 import store from './store';
-require('bootstrap/dist/css/bootstrap.min.css')
+import 'bootstrap/dist/css/bootstrap.min.css'
 require('font-awesome/css/font-awesome.min.css')
 Vue.config.productionTip = false
 
