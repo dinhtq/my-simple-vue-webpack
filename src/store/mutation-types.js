@@ -1,1 +1,2 @@
 export const FETCHED_TODOS = 'FETCHED_TODOS';
+export const CREATED_TODOS = 'CREATED_TODOS';

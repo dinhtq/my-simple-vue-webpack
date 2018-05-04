@@ -1,7 +1,23 @@
 <template>
   <div class="main-wrapper">
-    <h1>Rapid Prototyping with Vuex, Vue-resource, Bootstrap and Less</h1>
-    {{ toDos }}
+    <h1>My ToDo Lists</h1>
+    
+    <div class="container">
+      <ul class="list-group">
+        <li v-for="toDo in toDos" :key="toDo.id" 
+            class="list-group-item">
+            {{ toDo.title }}
+          </li>
+      </ul>
+
+      <div class="input-group mb-3">
+        <input v-model.trim="newToDos" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button"
+            @click="_addToDos()">Add</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,12 +28,12 @@ export default {
   name: 'Main',
 
   mounted () {
-    // this.fetchToDos();
+    this.fetchToDos();
   },
 
   data () {
     return {
-      msg: 'Hello'
+      newToDos: ''
     }
   },
 
@@ -28,7 +44,13 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchToDos'])
+    ...mapActions(['fetchToDos', 'addToDos']),
+
+    _addToDos () {
+      this.addToDos(({
+        title: this.newToDos
+      }));
+    }
   }
 }
 </script>
@@ -37,5 +59,9 @@ export default {
 <style scoped lang="less">
   .main-wrapper {
     height: 100%;
+
+    .container {
+      width: 500px;
+    }
   }
 </style>

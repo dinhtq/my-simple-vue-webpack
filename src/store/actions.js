@@ -14,3 +14,13 @@ export const fetchToDos = ({ commit }, req) => {
     throw new Error(err);
   });
 };
+
+export const addToDos = ({ commit }, newToDos) => {
+  return toDo.save(newToDos)
+  .then((res) => {
+    commit(types.CREATED_TODOS, res.body);
+  })
+  .catch((err) => {
+    throw new Error(err);
+  });
+};
